@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asciify", "Asciify\Asciify.csproj", "{FC80E692-1245-4EBA-97E3-B37B714D82A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC80E692-1245-4EBA-97E3-B37B714D82A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC80E692-1245-4EBA-97E3-B37B714D82A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC80E692-1245-4EBA-97E3-B37B714D82A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC80E692-1245-4EBA-97E3-B37B714D82A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D75ACF9-C185-46CC-8831-C23B4F57533E}
+	EndGlobalSection
+EndGlobal
