@@ -20,6 +20,8 @@ namespace Asciify
         BitmapAscii load = new BitmapAscii();
         Bitmap tempBitmap;
 
+        int kernalHeightInt = 1;
+        int kernalWidthInt = 1;
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -45,17 +47,18 @@ namespace Asciify
 
         private void kernalWidth_ValueChanged(object sender, EventArgs e)
         {
-
+            kernalWidthInt = int.Parse(kernalWidth.Value.ToString());
         }
 
         private void kernalHeight_ValueChanged(object sender, EventArgs e)
         {
-
+            kernalHeightInt = int.Parse(kernalHeight.Value.ToString());
+                
         }
 
         private void asciiPic_Click(object sender, EventArgs e)
         {
-            asciiPicTextBox.Text = load.Ascitize(tempBitmap, 1, 1);
+            asciiPicTextBox.Text = load.Ascitize(tempBitmap, kernalWidthInt, kernalHeightInt);
         }
     }
 }

@@ -13,27 +13,25 @@ namespace Asciify
     {
          public Bitmap ogBitmap;
         public Bitmap greyBitmap;
-        public int width =0;
-        public int heigth = 0;
-        public int kernalWidth = 1 ;
-        public int kernalHeight = 1;
+        public int width =5000;
+        public int heigth = 5000;
         public double [,] grayScaleArray;
-        public List<Color> grayPicColorList;
+
 
         public  void load_OG_Bitmap(string filename)   {
 
             ogBitmap = new Bitmap(filename);          
    
         }
-       public string Ascitize (Bitmap bmpTemp, int KernalWidth, int kernalHeight)
+       public string Ascitize (Bitmap bmpTemp, int kernalWidth, int kernalHeight)
         {
             string finalAscii = "";
             List<Color > kernelPixels = new List<Color>();
-            double kernelAverage;
+            double kernelAverage ;
             string asciiCharacter;
-            for(int y = 0 ; y<bmpTemp.Height; y++)
+            for(int y = 0 ; y<bmpTemp.Height; y+= kernalHeight)
             {
-                for(int x =0; x<bmpTemp.Width; x++)
+                for(int x =0; x<bmpTemp.Width; x+= kernalWidth)
                 {
                     //  GET PIXEL'S COLOR for "1x1" kernal
                     Color pixelColor = bmpTemp.GetPixel(x,y);
@@ -84,22 +82,22 @@ namespace Asciify
             string tempAsciiString = "";
             if(tempNormalizedKernelValue > .85)
             {
-                tempAsciiString = "@";
+                tempAsciiString = " ";
             }else if(tempNormalizedKernelValue < .85 && tempNormalizedKernelValue > .7)
             {
-                tempAsciiString = "#";
+                tempAsciiString = ".";
             }else if(tempNormalizedKernelValue < .7 && tempNormalizedKernelValue > .55)
             {
-                tempAsciiString = "*";
+                tempAsciiString = "^";
             }else if(tempNormalizedKernelValue < .55 && tempNormalizedKernelValue > .3)
             {
-                tempAsciiString = "^";
+                tempAsciiString = "*";
             }else if(tempNormalizedKernelValue < .3 && tempNormalizedKernelValue > .15)
             {
-                tempAsciiString = ".";
+                tempAsciiString = "#";
             }else 
             {
-                tempAsciiString= " ";
+                tempAsciiString= "@";
             }
             return tempAsciiString;
 
@@ -130,50 +128,7 @@ namespace Asciify
 
 
 
-   //    public List<Color> GrayPixelValuesToList()
-   //    {
-   //       for (int x = 0; x<greyBitmap.Width; x++)
-   //        {
-   //            for(int y = 0; y<greyBitmap.Height; y++)
-   //            {
-   //                Color tempPixelColor = greyBitmap.GetPixel(x,y);
-   //                grayPicColorList.Add(tempPixelColor);
-   //            }
-   //        }
-   //
-   //        return  grayPicColorList; 
-   //    
-   //    }
-
-
-     //  public double AveragePixel(int tempR, int tempG, int tempB)
-     //  {
-     //      double tempAvgPixel = 0;
-     //     for (int x = 0; x<greyBitmap.Width; x++)
-     //      {
-     //          for(int y = 0; y<greyBitmap.Height; y++)
-     //          {
-     //              Color tempPixelColor = greyBitmap.GetPixel(x,y);
-     //              tempAvgPixel = ((tempPixelColor.R + tempPixelColor.G + tempPixelColor.B) / 3);
-     //              grayScaleArray[x,y] = tempAvgPixel;
-     //          }
-     //      }
-     //
-     //      return  tempAvgPixel; 
-     //  }
-
-     // public void FillGray2DArray()
-     // {
-     //     for (int x = 0; x<greyBitmap.Width; x++)
-     //     {
-     //         for(int y = 0; y<greyBitmap.Height; y++)
-     //         {
-     //
-     //             grayScaleArray[x,y] = AveragePixel(averageGrayPixelColor);
-     //         }
-     //     }
-     // }
-
+ 
 
     }
 }
